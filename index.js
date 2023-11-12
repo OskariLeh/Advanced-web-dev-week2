@@ -28,15 +28,15 @@ app.post("/sum", (req, res) => {
     number_array.forEach(number => {
         sum += number
     });
-    res.send(sum)
+    res.send({"sum": sum})
 })
 
 app.post("/list", (req, res) => {
-    dataList.push(req.body)
-    res.send(dataList)
+    dataList.push(req.body.text)
+    res.send({"list": dataList})
 })
 
 
 app.listen(port, () => {
-    console.log("App listening")
+    console.log(`App listening to port ${port}`)
 })
